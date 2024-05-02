@@ -1,0 +1,181 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import '../styles/fonts/web/static/pretendard.css';
+
+@layer base {
+    html {
+        font-family: 'Pretendard', sans-serif;
+    }
+}
+
+.btn {
+    @apply primary-bg;
+}
+
+.btn:disabled {
+    @apply primary-bg-hover;
+    opacity: 0.6;
+}
+
+.btn:hover {
+    @apply primary-bg-hover;
+}
+
+.btn-sm {
+    @apply btn-sm-font btn-sm-layout btn;
+}
+
+.btn-md {
+    @apply btn-md-layout btn-md-font btn;
+}
+
+.btn-lg {
+    @apply btn-lg-layout btn-lg-font btn;
+}
+
+.btn-default-layout {
+    width: fit-content;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-lg-layout {
+    @apply btn-default-layout;
+    min-width: 110px;
+    height: 48px;
+    padding: 12px 16px;
+}
+
+.btn-lg-font {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 16px;
+}
+
+.btn-md-layout {
+    @apply btn-default-layout;
+    min-width: 90px;
+    height: 40px;
+    padding: 12px 16px;
+}
+
+.btn-md-font {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 16px;
+}
+
+.btn-sm-layout {
+    @apply btn-default-layout;
+    min-width: 70px;
+    height: 32px;
+    padding: 9px 12px;
+}
+
+.btn-sm-font {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 14px;
+}
+
+.primary-bg {
+    background-color: #60807d;
+    color: #ffffff;
+}
+
+.primary-bg-hover {
+    background-color: #6d918e;
+}
+
+.ui-nav-header {
+    padding: 1rem 1.5rem;
+    border-bottom: 2px solid #cccccc;
+}
+
+.ui-parent {
+    padding: 1rem;
+}
+
+.ui-parent > .title {
+    font-weight: 800;
+    font-size: 24px;
+    margin-bottom: 1rem;
+}
+
+.ui-contents {
+    display: flex;
+    align-items: center;
+}
+
+.ui-contents > * {
+    margin-right: 8px;
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+select {
+    -o-appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+input[type='range']::-webkit-slider-thumb {
+    @apply bg-concept;
+}
+
+input[type='range']::-moz-range-thumb {
+    @apply bg-concept;
+}
+
+input[type='range']::-ms-thumb {
+    @apply bg-concept;
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.8;
+    }
+    75% {
+        opacity: 0.8;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.floating-alert {
+    padding: 1rem;
+    width: fit-content;
+    height: 50px;
+    bottom: 10%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 100;
+    border-radius: 20px;
+    position: absolute;
+    background-color: rgba(109, 145, 142, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.8; /* 초기 투명도 설정 */
+    animation-name: fadeOut; /* 사용할 애니메이션 이름 */
+    animation-duration: 2s; /* 전체 애니메이션 지속 시간 */
+    animation-timing-function: linear; /* 애니메이션 속도 곡선 */
+    animation-delay: 0s; /* 애니메이션 시작 전 딜레이 */
+    animation-fill-mode: forwards; /* 애니메이션 종료 후 상태 유지 */
+}
+
+.floating-alert > span {
+    font-weight: bold;
+    font-size: 18px;
+    color: #252525;
+}
